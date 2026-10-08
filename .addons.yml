@@ -1,0 +1,7 @@
+---
+channel: stable
+addons:
+  uptime-kuma-docsock:
+    repository: rpetrina/app-uptime-kuma
+    target: uptime-kuma-docsock
+    image: ghcr.io/rpetrina/uptime-kuma
