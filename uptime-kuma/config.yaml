@@ -1,17 +1,31 @@
----
-name: Uptime Kuma Docker Socket
-version: 0.0.1
+name: Uptime Kuma (Docker Socket)
 slug: uptime-kuma
-description: It is a self-hosted monitoring tool
-url: https://github.com/hassio-addons/app-uptime-kuma
+description: Uptime monitoring tool based on Uptime Kuma
+url: https://github.com/rpetrina/app-uptime-kuma
+version: 0.19.3
 webui: http://[HOST]:[PORT:3001]
 init: false
 arch:
-  - aarch64
-  - amd64
+- aarch64
+- amd64
 ports:
   3001/tcp: 3001
+host_network: true
+environment:
+  UPTIME_KUMA_DISABLE_FRAME_SAMEORIGIN: 'true'
+  DOCKER_TLS_DIR_PATH: /data/docker-tls
+  NODE_EXTRA_CA_CERTS: /data/docker-tls/fullchain.pem
+options:
+  SERVER_HOSTNAME: ''
+schema:
+  SERVER_HOSTNAME: str
+map:
+- ssl:ro
+hassio_api: true
+hassio_role: admin
+docker_api: true
 ports_description:
   3001/tcp: Web interface
 discovery:
-  - uptime_kuma
+- uptime_kuma
+image: ghcr.io/rpetrina/uptime-kuma
