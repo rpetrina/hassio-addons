@@ -1,0 +1,4 @@
+# https://developers.home-assistant.io/docs/add-ons/repository#repository-configuration
+name: rpetrina's Home Assistant Add-ons
+url: 'https://github.com/rpetrina/hassio-addons/'
+maintainer: rpetrina
