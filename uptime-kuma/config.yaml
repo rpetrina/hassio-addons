@@ -2,7 +2,7 @@ name: Uptime Kuma (Docker Socket)
 slug: uptime-kuma
 description: Uptime monitoring tool based on Uptime Kuma
 url: https://github.com/rpetrina/app-uptime-kuma
-version: 0.19.3
+version: 0.19.4
 webui: http://[HOST]:[PORT:3001]
 init: false
 arch:
@@ -16,9 +16,10 @@ environment:
   DOCKER_TLS_DIR_PATH: /data/docker-tls
   NODE_EXTRA_CA_CERTS: /data/docker-tls/fullchain.pem
 options:
-  SERVER_HOSTNAME: ''
+  SERVER_HOSTNAMES: []
 schema:
-  SERVER_HOSTNAME: str
+  SERVER_HOSTNAMES:
+  - str
 map:
 - ssl:ro
 hassio_api: true
